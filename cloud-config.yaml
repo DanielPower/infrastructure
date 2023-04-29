@@ -1,0 +1,60 @@
+groups:
+  - docker
+users:
+  - name: daniel
+    shell: /bin/bash
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
+packages:
+  - git
+  - nodejs
+  - docker-ce
+  - docker-compose
+write_files:
+  - path: docker-compose.yaml
+    content: |
+      version: "3"
+      services:
+        reverse-proxy:
+          image: traefik:v2.6
+          command:
+            - "--api.insecure=true"
+            - "--providers.docker"
+            - "--entrypoints.web.address=:80"
+            - "--entrypoints.websecure.address=:443"
+            - "--certificatesresolvers.resolver.acme.email=me@danielpower.ca"
+            - "--certificatesresolvers.resolver.acme.tlschallenge=true"
+            - "--certificatesresolvers.resolver.acme.storage=/letsencrypt/resolver.json"
+          ports:
+            - "80:80"
+            - "443:443"
+          volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock"
+            - "./volumes/traefik_letsencrypt_data:/letsencrypt"
+          labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.http-catchall.rule=hostregexp(`{host:.+}`)"
+            - "traefik.http.routers.http-catchall.entrypoints=web"
+            - "traefik.http.routers.http-catchall.middlewares=redirect-to-https@docker"
+            - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+        watchtower:
+          image: containrrr/watchtower
+          volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+          command: --interval 300
+        personal-site:
+          image: ghcr.io/danielpower/personal-site:main
+          labels:
+            - "traefik.http.routers.danielpower.rule=(Host(`danielpower.ca`) || Host(`www.danielpower.ca`))"
+            - "traefik.http.routers.danielpower.tls=true"
+            - "traefik.http.routers.danielpower.tls.certresolver=resolver"
+        keeb-pro:
+          image: registry.gitlab.com/danielpower/keeb-pro:latest
+          labels:
+            - "traefik.http.routers.keeb.rule=Host(`keeb.danielpower.ca`)"
+            - "traefik.http.routers.keeb.tls=true"
+            - "traefik.http.routers.keeb.tls.certresolver=resolver"
+    owner: daniel:daniel
+    permissions: "0o644"
+    encoding: text/plain
+    append: false
+    defer: false
