@@ -19,6 +19,8 @@ write_files:
             - "--providers.docker.exposedbydefault=false"
             - "--entrypoints.web.address=:80"
             - "--entrypoints.websecure.address=:443"
+            - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+            - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
             - "--certificatesresolvers.resolver.acme.httpchallenge=true"
             - "--certificatesresolvers.resolver.acme.httpchallenge.entrypoint=web"
             - "--certificatesresolvers.resolver.acme.email=me@danielpower.ca"
