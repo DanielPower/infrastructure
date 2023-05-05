@@ -47,6 +47,7 @@ write_files:
         keeb-pro:
           image: registry.gitlab.com/danielpower/keeb-pro:latest
           labels:
+            - "traefik.enable=true"
             - "traefik.http.routers.keeb.rule=Host(`keeb.danielpower.ca`)"
             - "traefik.http.routers.keeb.entrypoints=websecure"
             - "traefik.http.routers.keeb.tls.certresolver=resolver"
