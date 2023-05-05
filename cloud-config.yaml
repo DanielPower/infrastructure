@@ -15,40 +15,40 @@ write_files:
           image: traefik:v2.6
           command:
             - "--api.insecure=true"
-            - "--providers.docker"
+            - "--providers.docker=true"
+            - "--providers.docker.exposedbydefault=false"
             - "--entrypoints.web.address=:80"
             - "--entrypoints.websecure.address=:443"
+            - "--certificatesresolvers.resolver.acme.httpchallenge=true"
+            - "--certificatesresolvers.resolver.acme.httpchallenge.entrypoint=web"
             - "--certificatesresolvers.resolver.acme.email=me@danielpower.ca"
-            - "--certificatesresolvers.resolver.acme.tlschallenge=true"
-            - "--certificatesresolvers.resolver.acme.storage=/letsencrypt/resolver.json"
+            - "--certificatesresolvers.resolver.acme.storage=/letsencrypt/acme.json"
           ports:
             - "80:80"
             - "443:443"
+            - "8080:8080"
           volumes:
-            - "/var/run/docker.sock:/var/run/docker.sock"
-            - "./volumes/traefik_letsencrypt_data:/letsencrypt"
-          labels:
-            - "traefik.enable=true"
-            - "traefik.http.routers.http-catchall.rule=hostregexp(`{host:.+}`)"
-            - "traefik.http.routers.http-catchall.entrypoints=web"
-            - "traefik.http.routers.http-catchall.middlewares=redirect-to-https@docker"
-            - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+            - "./letsencrypt:/letsencrypt"
+            - "/var/run/docker.sock:/var/run/docker.sock:ro"
+          privileged: true
         watchtower:
           image: containrrr/watchtower
           volumes:
-            - /var/run/docker.sock:/var/run/docker.sock
+            - "/var/run/docker.sock:/var/run/docker.sock:ro"
           command: --interval 300
+          privileged: true
         personal-site:
           image: ghcr.io/danielpower/personal-site:main
           labels:
-            - "traefik.http.routers.danielpower.rule=(Host(`danielpower.ca`) || Host(`www.danielpower.ca`))"
-            - "traefik.http.routers.danielpower.tls=true"
+            - "traefik.enable=true"
+            - "traefik.http.routers.danielpower.rule=Host(`www.danielpower.ca`)"
+            - "traefik.http.routers.danielpower.entrypoints=websecure"
             - "traefik.http.routers.danielpower.tls.certresolver=resolver"
         keeb-pro:
           image: registry.gitlab.com/danielpower/keeb-pro:latest
           labels:
             - "traefik.http.routers.keeb.rule=Host(`keeb.danielpower.ca`)"
-            - "traefik.http.routers.keeb.tls=true"
+            - "traefik.http.routers.keeb.entrypoints=websecure"
             - "traefik.http.routers.keeb.tls.certresolver=resolver"
     permissions: "0o644"
     encoding: text/plain
