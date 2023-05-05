@@ -23,6 +23,11 @@ resource "digitalocean_droplet" "main" {
   ssh_keys  = [digitalocean_ssh_key.main.fingerprint]
 }
 
+resource "digitalocean_reserved_ip" "reserved_ip" {
+  droplet_id = digitalocean_droplet.main.id
+  region     = digitalocean_droplet.main.region
+}
+
 resource "digitalocean_ssh_key" "main" {
   name       = "personal-site"
   public_key = var.ssh_key
