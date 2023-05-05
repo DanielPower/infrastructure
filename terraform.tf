@@ -41,14 +41,14 @@ resource "digitalocean_record" "main" {
   domain = digitalocean_domain.main.name
   type   = "A"
   name   = "@"
-  value  = digitalocean_droplet.main.ipv4_address
+  value  = digitalocean_reserved_ip.reserved_ip.ip_address
 }
 
 resource "digitalocean_record" "subdomains" {
   domain = digitalocean_domain.main.name
   type   = "A"
   name   = "*"
-  value  = digitalocean_droplet.main.ipv4_address
+  value  = digitalocean_reserved_ip.reserved_ip.ip_address
 }
 
 resource "digitalocean_record" "email_cname" {
