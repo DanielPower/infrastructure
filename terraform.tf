@@ -35,6 +35,13 @@ resource "digitalocean_domain" "main" {
 resource "digitalocean_record" "main" {
   domain = digitalocean_domain.main.name
   type   = "A"
+  name   = "@"
+  value  = digitalocean_droplet.main.ipv4_address
+}
+
+resource "digitalocean_record" "subdomains" {
+  domain = digitalocean_domain.main.name
+  type   = "A"
   name   = "*"
   value  = digitalocean_droplet.main.ipv4_address
 }
