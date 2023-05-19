@@ -41,6 +41,8 @@ write_files:
           privileged: true
         personal-site:
           image: ghcr.io/danielpower/personal-site:main
+          environment:
+            - PUBLIC_ORIGIN: https://www.danielpower.ca
           labels:
             - "traefik.enable=true"
             - "traefik.http.routers.danielpower.rule=Host(`www.danielpower.ca`)"
