@@ -45,7 +45,7 @@ write_files:
             PUBLIC_ORIGIN: https://www.danielpower.ca
           labels:
             - "traefik.enable=true"
-            - "traefik.http.routers.danielpower.rule=Host(`www.danielpower.ca`)"
+            - "traefik.http.routers.danielpower.rule=Host(`danielpower.ca`, `www.danielpower.ca`)"
             - "traefik.http.routers.danielpower.entrypoints=websecure"
             - "traefik.http.routers.danielpower.tls.certresolver=resolver"
         keeb-pro:
