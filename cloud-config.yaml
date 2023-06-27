@@ -13,6 +13,7 @@ write_files:
       services:
         reverse-proxy:
           image: traefik:v2.6
+          restart: always
           command:
             - "--api.insecure=true"
             - "--providers.docker=true"
@@ -35,12 +36,14 @@ write_files:
           privileged: true
         watchtower:
           image: containrrr/watchtower
+          restart: always
           volumes:
             - "/var/run/docker.sock:/var/run/docker.sock:ro"
           command: --interval 300
           privileged: true
         personal-site:
           image: ghcr.io/danielpower/personal-site:main
+          restart: always
           environment:
             PUBLIC_ORIGIN: https://www.danielpower.ca
           labels:
@@ -50,6 +53,7 @@ write_files:
             - "traefik.http.routers.danielpower.tls.certresolver=resolver"
         keeb-pro:
           image: registry.gitlab.com/danielpower/keeb-pro:latest
+          restart: always
           labels:
             - "traefik.enable=true"
             - "traefik.http.routers.keeb.rule=Host(`keeb.danielpower.ca`)"
