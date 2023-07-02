@@ -15,7 +15,7 @@ provider "digitalocean" {
 }
 
 resource "digitalocean_droplet" "main" {
-  image     = "fedora-37-x64"
+  image     = "fedora-38-x64"
   name      = "personal-site"
   region    = "tor1"
   size      = "s-1vcpu-1gb"
