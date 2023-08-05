@@ -59,6 +59,14 @@ write_files:
             - "traefik.http.routers.keeb.rule=Host(`keeb.danielpower.ca`)"
             - "traefik.http.routers.keeb.entrypoints=websecure"
             - "traefik.http.routers.keeb.tls.certresolver=resolver"
+        rat:
+          image: ghcr.io/danielpower/TheTavernBasement:master
+          restart: always
+          labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.rat.rule=Host(`rat.danielpower.ca`)"
+            - "traefik.http.routers.rat.entrypoints=websecure"
+            - "traefik.http.routers.rat.tls.certresolver=resolver"
     permissions: "0o644"
     encoding: text/plain
     append: false
