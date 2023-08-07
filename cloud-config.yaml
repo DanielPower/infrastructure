@@ -60,7 +60,7 @@ write_files:
             - "traefik.http.routers.keeb.entrypoints=websecure"
             - "traefik.http.routers.keeb.tls.certresolver=resolver"
         rat:
-          image: ghcr.io/danielpower/thetavernbasement:master
+          image: ghcr.io/danielpower/thetaverncellar:master
           restart: always
           labels:
             - "traefik.enable=true"
