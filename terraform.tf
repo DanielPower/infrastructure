@@ -9,18 +9,21 @@ terraform {
 
 variable "do_token" {}
 variable "ssh_key" {}
+variable "twatbot_discord_token" {}
 
 provider "digitalocean" {
   token = var.do_token
 }
 
 resource "digitalocean_droplet" "main" {
-  image     = "fedora-38-x64"
-  name      = "personal-site"
-  region    = "tor1"
-  size      = "s-1vcpu-1gb"
-  user_data = file("${path.module}/cloud-config.yaml")
-  ssh_keys  = [digitalocean_ssh_key.main.fingerprint]
+  image  = "fedora-38-x64"
+  name   = "personal-site"
+  region = "tor1"
+  size   = "s-1vcpu-1gb"
+  user_data = templatefile("${path.module}/cloud-config.yaml.tftpl", {
+    twatbot_discord_token = var.twatbot_discord_token
+  })
+  ssh_keys = [digitalocean_ssh_key.main.fingerprint]
 }
 
 resource "digitalocean_reserved_ip" "reserved_ip" {

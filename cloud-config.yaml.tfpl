@@ -67,6 +67,11 @@ write_files:
             - "traefik.http.routers.rat.rule=Host(`rat.danielpower.ca`)"
             - "traefik.http.routers.rat.entrypoints=websecure"
             - "traefik.http.routers.rat.tls.certresolver=resolver"
+        twat-bot:
+          image: ghcr.io/danielpower/twat-bot:main
+          restart: always
+          environment:
+            DISCORD_TOKEN: ${ twatbot_discord_token }
     permissions: "0o644"
     encoding: text/plain
     append: false
