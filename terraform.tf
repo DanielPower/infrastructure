@@ -26,6 +26,18 @@ resource "digitalocean_droplet" "main" {
   ssh_keys = [digitalocean_ssh_key.main.fingerprint]
 }
 
+resource "digitalocean_volume" "main" {
+  region                  = "tor1"
+  name                    = "main-persistence"
+  size                    = 5
+  initial_filesystem_type = "xfs"
+}
+
+resource "digitalocean_volume_attachment" "main" {
+  droplet_id = digitalocean_droplet.main.id
+  volume_id  = digitalocean_volume.main.id
+}
+
 resource "digitalocean_reserved_ip" "reserved_ip" {
   droplet_id = digitalocean_droplet.main.id
   region     = digitalocean_droplet.main.region
