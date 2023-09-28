@@ -71,16 +71,17 @@ write_files:
           image: ghcr.io/danielpower/twat-bot:main
           restart: always
           environment:
+            DATABASE_URL: sqlite://data/db.sqlite3
             DISCORD_TOKEN: ${ twatbot_discord_token }
           volumes:
-            - /data:/mnt/persistence/twat-bot
+            - /mnt/persistence/twat-bot:/data
     permissions: "0o644"
     encoding: text/plain
     append: false
     defer: false
 runcmd:
   # Setup block storage
-  - "mkdir -p /mnt/persistence/twat-bot"
+  - "mkdir -p /mnt/persistence"
   - "mount -o discard,defaults,noatime /dev/disk/by-id/scsi-0DO_Volume_main-persistence /mnt/persistence"
   - "echo '/dev/disk/by-id/scsi-0DO_Volume_main-persistence /mnt/main_persistence xfs defaults,nofail,discard 0 0' | sudo tee -a /etc/fstab"
 
