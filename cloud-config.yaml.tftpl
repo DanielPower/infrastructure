@@ -51,6 +51,12 @@ write_files:
             - "traefik.http.routers.danielpower.rule=Host(`danielpower.ca`, `www.danielpower.ca`)"
             - "traefik.http.routers.danielpower.entrypoints=websecure"
             - "traefik.http.routers.danielpower.tls.certresolver=resolver"
+            - "traefik.http.routers.danpower.rule=Host(`danpower.ca`, `www.danpower.ca`)"
+            - "traefik.http.routers.danpower.entrypoints=websecure"
+            - "traefik.http.routers.danpower.tls.certresolver=resolver"
+            - "traefik.http.routers.gulchnexus.rule=Host(`gulch.nexus`, `www.gulch.nexus`)"
+            - "traefik.http.routers.gulchnexus.entrypoints=websecure"
+            - "traefik.http.routers.gulchnexus.tls.certresolver=resolver"
         keeb-pro:
           image: registry.gitlab.com/danielpower/keeb-pro:latest
           restart: always
