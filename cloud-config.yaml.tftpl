@@ -81,6 +81,17 @@ write_files:
             DISCORD_TOKEN: ${ twatbot_discord_token }
           volumes:
             - /mnt/persistence/twat-bot:/data
+        rainbot-sands:
+          image: ghcr.io/danielpower/rainbot-sands:main
+          restart: always
+          environment:
+            DISCORD_TOKEN: ${ rainbot_sands_discord_token }
+            APPLICATION_ID: ${ rainbot_sands_application_id }
+          labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.rainbot.rule=Host(`rainbot.danielpower.ca`)"
+            - "traefik.http.routers.rainbot.entrypoints=websecure"
+            - "traefik.http.routers.rainbot.tls.certresolver=resolver"
     permissions: "0o644"
     encoding: text/plain
     append: false
