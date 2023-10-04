@@ -48,35 +48,71 @@ resource "digitalocean_ssh_key" "main" {
   public_key = var.ssh_key
 }
 
-resource "digitalocean_domain" "main" {
+resource "digitalocean_domain" "danielpower" {
   name = "danielpower.ca"
 }
 
-resource "digitalocean_record" "main" {
-  domain = digitalocean_domain.main.name
+resource "digitalocean_record" "danielpower" {
+  domain = digitalocean_domain.danielpower.name
   type   = "A"
   name   = "@"
   value  = digitalocean_reserved_ip.reserved_ip.ip_address
 }
 
-resource "digitalocean_record" "subdomains" {
-  domain = digitalocean_domain.main.name
+resource "digitalocean_record" "danielpower_subdomains" {
+  domain = digitalocean_domain.danielpower.name
   type   = "A"
   name   = "*"
   value  = digitalocean_reserved_ip.reserved_ip.ip_address
 }
 
-resource "digitalocean_record" "email_cname" {
-  domain = digitalocean_domain.main.name
+resource "digitalocean_record" "danielpower_email_cname" {
+  domain = digitalocean_domain.danielpower.name
   type   = "CNAME"
   name   = "mail"
   value  = "mail.hover.com.cust.hostedemail.com."
 }
 
-resource "digitalocean_record" "email_mx" {
-  domain   = digitalocean_domain.main.name
+resource "digitalocean_record" "danielpower_email_mx" {
+  domain   = digitalocean_domain.danielpower.name
   type     = "MX"
   name     = "@"
   value    = "mx.hover.com.cust.hostedemail.com."
   priority = 10
+}
+
+resource "digitalocean_domain" "danpower" {
+  name = "danpower.ca"
+}
+
+resource "digitalocean_record" "danpower" {
+  domain = digitalocean_domain.danpower.name
+  type   = "A"
+  name   = "@"
+  value  = digitalocean_reserved_ip.reserved_ip.ip_address
+}
+
+resource "digitalocean_record" "danpower_subdomains" {
+  domain = digitalocean_domain.danpower.name
+  type   = "A"
+  name   = "*"
+  value  = digitalocean_reserved_ip.reserved_ip.ip_address
+}
+
+resource "digitalocean_domain" "gulch_nexus" {
+  name = "gulch.nexus"
+}
+
+resource "digitalocean_record" "gulch_nexus" {
+  domain = digitalocean_domain.gulch_nexus.name
+  type   = "A"
+  name   = "@"
+  value  = digitalocean_reserved_ip.reserved_ip.ip_address
+}
+
+resource "digitalocean_record" "gulch_nexus_subdomains" {
+  domain = digitalocean_domain.gulch_nexus.name
+  type   = "A"
+  name   = "*"
+  value  = digitalocean_reserved_ip.reserved_ip.ip_address
 }
