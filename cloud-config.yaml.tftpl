@@ -77,7 +77,7 @@ write_files:
           image: ghcr.io/danielpower/twat-bot:main
           restart: always
           environment:
-            DATABASE_URL: sqlite://data/db.sqlite3
+            DATABASE_URL: sqlite://db.sqlite3
             DISCORD_TOKEN: ${ twatbot_discord_token }
           volumes:
             - /mnt/persistence/twat-bot:/data
