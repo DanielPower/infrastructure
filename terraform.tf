@@ -9,25 +9,18 @@ terraform {
 
 variable "do_token" {}
 variable "ssh_key" {}
-variable "twatbot_discord_token" {}
-variable "rainbot_sands_discord_token" {}
-variable "rainbot_sands_application_id" {}
 
 provider "digitalocean" {
   token = var.do_token
 }
 
 resource "digitalocean_droplet" "main" {
-  image  = "fedora-38-x64"
-  name   = "personal-site"
-  region = "tor1"
-  size   = "s-1vcpu-1gb"
-  user_data = templatefile("${path.module}/cloud-config.yaml.tftpl", {
-    twatbot_discord_token        = var.twatbot_discord_token
-    rainbot_sands_discord_token  = var.rainbot_sands_discord_token
-    rainbot_sands_application_id = var.rainbot_sands_application_id
-  })
-  ssh_keys = [digitalocean_ssh_key.main.fingerprint]
+  image     = "fedora-38-x64"
+  name      = "personal-site"
+  region    = "tor1"
+  size      = "s-1vcpu-1gb"
+  user_data = file("${path.module}/cloud-config.yaml")
+  ssh_keys  = [digitalocean_ssh_key.main.fingerprint]
 }
 
 resource "digitalocean_volume" "main" {
