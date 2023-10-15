@@ -69,7 +69,7 @@ services:
     environment:
       DATABASE_URL: sqlite://db.sqlite3
     volumes:
-      - /mnt/persistence/twat-bot:/data
+      - /mnt/persistence/twat-bot:/data:z
   rainbot-sands:
     image: ghcr.io/danielpower/rainbot-sands:main
     restart: always
