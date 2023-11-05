@@ -79,3 +79,11 @@ services:
       - "traefik.http.routers.rainbot.rule=Host(`rainbot.danielpower.ca`)"
       - "traefik.http.routers.rainbot.entrypoints=websecure"
       - "traefik.http.routers.rainbot.tls.certresolver=resolver"
+  swift-spider:
+    image: ghcr.io/danielpower/swift-spider:main
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.rainbot.rule=Host(`journal.danielpower.ca`)"
+      - "traefik.http.routers.rainbot.entrypoints=websecure"
+      - "traefik.http.routers.rainbot.tls.certresolver=resolver"
