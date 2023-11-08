@@ -82,7 +82,7 @@ services:
   swift-spider:
     image: ghcr.io/danielpower/swift-spider:main
     restart: always
-    env_file: /mnt/persistence/swift-spider.env
+    env_file: /mnt/persistence/swift_spider.env
     volumes:
       - /mnt/persistence/swift-spider:/data:z
     labels:
