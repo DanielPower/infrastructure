@@ -82,8 +82,10 @@ services:
   swift-spider:
     image: ghcr.io/danielpower/swift-spider:main
     restart: always
+    volumes:
+      - /mnt/persistence/swift-spider:/data:z
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.rainbot.rule=Host(`journal.danielpower.ca`)"
-      - "traefik.http.routers.rainbot.entrypoints=websecure"
-      - "traefik.http.routers.rainbot.tls.certresolver=resolver"
+      - "traefik.http.routers.swift-spider.rule=Host(`journal.danielpower.ca`)"
+      - "traefik.http.routers.swift-spider.entrypoints=websecure"
+      - "traefik.http.routers.swift-spider.tls.certresolver=resolver"
