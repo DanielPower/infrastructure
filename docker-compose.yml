@@ -90,3 +90,11 @@ services:
       - "traefik.http.routers.swift-spider.rule=Host(`journal.danielpower.ca`)"
       - "traefik.http.routers.swift-spider.entrypoints=websecure"
       - "traefik.http.routers.swift-spider.tls.certresolver=resolver"
+  keeb-pro:
+    image: registry.gitlab.com/danielpower/squid-jam-2023:latest
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.squid.rule=Host(`squid.danielpower.ca`)"
+      - "traefik.http.routers.squid.entrypoints=websecure"
+      - "traefik.http.routers.squid.tls.certresolver=resolver"
