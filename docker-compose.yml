@@ -91,7 +91,7 @@ services:
       - "traefik.http.routers.swift-spider.entrypoints=websecure"
       - "traefik.http.routers.swift-spider.tls.certresolver=resolver"
   keeb-pro:
-    image: registry.gitlab.com/danielpower/squid-jam-2023:latest
+    image: ghcr.io/danielpower/squid-jam-2023:main
     restart: always
     labels:
       - "traefik.enable=true"
