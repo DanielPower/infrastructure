@@ -62,14 +62,6 @@ services:
       - "traefik.http.routers.rat.rule=Host(`rat.danielpower.ca`)"
       - "traefik.http.routers.rat.entrypoints=websecure"
       - "traefik.http.routers.rat.tls.certresolver=resolver"
-  twat-bot:
-    image: ghcr.io/danielpower/twat-bot:main
-    restart: always
-    env_file: /mnt/persistence/twat_bot.env
-    environment:
-      DATABASE_URL: sqlite://db.sqlite3
-    volumes:
-      - /mnt/persistence/twat-bot:/data:z
   rainbot-sands:
     image: ghcr.io/danielpower/rainbot-sands:main
     restart: always
