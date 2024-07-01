@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keeb
+spec:
+  selector:
+    matchLabels:
+      app: keeb
+  template:
+    metadata:
+      labels:
+        app: keeb
+    spec:
+      containers:
+        - name: keeb
+          image: registry.gitlab.com/danielpower/keeb-pro:latest
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            seccompProfile:
+              type: RuntimeDefault
+          ports:
+            - containerPort: 3000

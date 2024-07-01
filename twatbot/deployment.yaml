@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: twatbot
+spec:
+  selector:
+    matchLabels:
+      app: twatbot
+  template:
+    metadata:
+      labels:
+        app: twatbot
+    spec:
+      containers:
+        - name: twatbot
+          image: ghcr.io/danielpower/twat-bot:main
+          imagePullPolicy: Always
+          envFrom:
+            - secretRef:
+                name: twatbot-secrets
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            runAsUser: 1000
+            seccompProfile:
+              type: RuntimeDefault
