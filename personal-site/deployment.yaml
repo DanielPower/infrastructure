@@ -21,6 +21,11 @@ spec:
         - name: personal-site
           image: ghcr.io/danielpower/personal-site:main
           imagePullPolicy: Always
+          env:
+            - name: PUBLIC_NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
