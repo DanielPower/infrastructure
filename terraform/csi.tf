@@ -16,7 +16,7 @@ resource "kubernetes_storage_class" "nfs" {
 
   parameters = {
     server = "192.168.0.2"
-    share  = "/main/crispykube"
-    subDir = "$${pvc.metadata.namespace}/$${pvc.metadata.name}"
+    share  = "/main"
+    subDir = "crispykube/$${pvc.metadata.namespace}/$${pvc.metadata.name}"
   }
 }
