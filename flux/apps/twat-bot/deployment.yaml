@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: twat-bot
+spec:
+  selector:
+    matchLabels:
+      app: twat-bot
+  template:
+    metadata:
+      labels:
+        app: twat-bot
+    spec:
+      containers:
+        - name: twat-bot
+          image: ghcr.io/danielpower/twat-bot:main
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            runAsUser: 1000
+            seccompProfile:
+              type: RuntimeDefault
