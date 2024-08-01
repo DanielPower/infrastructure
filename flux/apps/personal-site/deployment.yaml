@@ -26,8 +26,8 @@ spec:
                     operator: In
                     values:
                       - personal-site
-                matchLabelKeys:
-                  - pod-template-hash
+              matchLabelKeys:
+                - pod-template-hash
               topologyKey: "kubernetes.io/hostname"
       containers:
         - name: personal-site
