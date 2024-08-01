@@ -21,11 +21,11 @@ spec:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             - labelSelector:
+                matchLabels:
+                  app: personal-site
                 matchExpressions:
-                  - key: app
-                    operator: In
-                    values:
-                      - personal-site
+                  - key: pod-template-hash
+                    operator: Exists
               topologyKey: "kubernetes.io/hostname"
       containers:
         - name: personal-site
