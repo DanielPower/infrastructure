@@ -17,6 +17,16 @@ spec:
       labels:
         app: personal-site
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - personal-site
+              topologyKey: "kubernetes.io/hostname"
       containers:
         - name: personal-site
           image: ghcr.io/danielpower/personal-site:main
