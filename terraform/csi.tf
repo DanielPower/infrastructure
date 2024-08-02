@@ -32,7 +32,7 @@ resource "kubernetes_storage_class" "nfs_root" {
   parameters = {
     server = "192.168.0.2"
     share  = "/main"
-    subDir = "$${pvc.metadata.path}"
+    subDir = "$${pvc.metadata.annotations.path}"
     onDelete = "retain"
   }
 }
