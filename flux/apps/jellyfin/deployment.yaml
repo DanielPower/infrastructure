@@ -18,24 +18,14 @@ spec:
             - containerPort: 8096
             - containerPort: 8920
           volumeMounts:
-            - name: jellyfin-config
+            - name: config
               mountPath: /config
-            - name: jellyfin-data
+            - name: data
               mountPath: /data
-          securityContext:
-            allowPrivilegeEscalation: false
-            capabilities:
-              add:
-                - NET_BIND_SERVICE
-            readOnlyRootFilesystem: true
-            runAsNonRoot: true
-            runAsUser: 1000
-            seccompProfile:
-              type: RuntimeDefault
       volumes:
-        - name: jellyfin-config
+        - name: config
           persistentVolumeClaim:
-            claimName: jellyfin-config
-        - name: jellyfin-data
+            claimName: config
+        - name: data
           persistentVolumeClaim:
-            claimName: jellyfin-data
+            claimName: data

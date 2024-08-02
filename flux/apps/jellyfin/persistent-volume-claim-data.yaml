@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: jellyfin-data
+  name: data
 spec:
   storageClassName: nfs-csi
   accessModes:
