@@ -6,3 +6,5 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
+  - persistent-volume-claim-data.yaml
+  - persistent-volume-claim-config.yaml
