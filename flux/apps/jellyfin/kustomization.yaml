@@ -6,8 +6,4 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
-  - persistent-volume-claim-config.yaml
-  - persistent-volume-claim-music.yaml
-  - persistent-volume-claim-movies.yaml
-  - persistent-volume-claim-shows.yaml
-  - persistent-volume-claim-youtube.yaml
+  - persistent-volume-claim.yaml
