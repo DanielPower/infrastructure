@@ -23,4 +23,5 @@ spec:
             seccompProfile:
               type: RuntimeDefault
           ports:
-            - containerPort: 3000
+            - name: http
+              containerPort: 80
