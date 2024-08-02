@@ -2,7 +2,8 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: youtube
-  path: youtube
+  annotations:
+    path: movies
 spec:
   storageClassName: nfs-csi-root
   accessModes:
