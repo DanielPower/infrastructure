@@ -34,14 +34,22 @@ spec:
           persistentVolumeClaim:
             claimName: config
         - name: movies
-          persistentVolumeClaim:
-            claimName: movies
+          nfs:
+            server: 192.168.0.2
+            path: /main/movies
+            readOnly: true
         - name: shows
-          persistentVolumeClaim:
-            claimName: shows
-        - name: music
-          persistentVolumeClaim:
-            claimName: music
+          nfs:
+            server: 192.168.0.2
+            path: /main/shows
+            readOnly: true
         - name: youtube
-          persistentVolumeClaim:
-            claimName: youtube
+          nfs:
+            server: 192.168.0.2
+            path: /main/youtube
+            readOnly: true
+        - name: music
+          nfs:
+            server: 192.168.0.2
+            path: /main/music
+            readOnly: true
