@@ -20,19 +20,6 @@ resource "kubernetes_storage_class" "nfs" {
     subDir = "crispykube/$${pvc.metadata.namespace}/$${pvc.metadata.name}"
     onDelete = "archive"
   }
-}
 
-resource "kubernetes_storage_class" "nfs_root" {
-  metadata {
-    name = "nfs-csi-root"
-  }
-
-  storage_provisioner = "nfs.csi.k8s.io"
-
-  parameters = {
-    server = "192.168.0.2"
-    share  = "/main"
-    subDir = "$${pvc.metadata.annotations.path}"
-    onDelete = "retain"
-  }
+  mount_options = ["vers=4.1"]
 }

@@ -38,18 +38,22 @@ spec:
             server: 192.168.0.2
             path: /main/movies
             readOnly: true
+            options: vers=4.1
         - name: shows
           nfs:
             server: 192.168.0.2
             path: /main/shows
             readOnly: true
+            options: vers=4.1
         - name: youtube
           nfs:
             server: 192.168.0.2
             path: /main/youtube
             readOnly: true
+            options: vers=4.1
         - name: music
           nfs:
             server: 192.168.0.2
             path: /main/music
             readOnly: true
+            options: vers=4.1
