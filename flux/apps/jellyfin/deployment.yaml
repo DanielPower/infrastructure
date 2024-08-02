@@ -38,8 +38,11 @@ spec:
           hostPath:
             path: "/dev/dri/renderD128"
         - name: config
-          persistentVolumeClaim:
-            claimName: config
+          nfs:
+            server: 192.168.0.2
+            path: /main/crispykube/jellyfin/config
+            readOnly: false
+            options: vers=4.1
         - name: movies
           nfs:
             server: 192.168.0.2
