@@ -21,12 +21,27 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /config
-            - name: data
-              mountPath: /data
+            - name: movies
+              mountPath: /data/movies
+            - name: shows
+              mountPath: /data/shows
+            - name: music
+              mountPath: /data/music
+            - name: youtube
+              mountPath: /data/youtube
       volumes:
         - name: config
           persistentVolumeClaim:
             claimName: config
-        - name: data
+        - name: movies
           persistentVolumeClaim:
-            claimName: data
+            claimName: movies
+        - name: shows
+          persistentVolumeClaim:
+            claimName: shows
+        - name: music
+          persistentVolumeClaim:
+            claimName: music
+        - name: youtube
+          persistentVolumeClaim:
+            claimName: youtube
