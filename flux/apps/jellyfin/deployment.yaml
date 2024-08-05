@@ -18,8 +18,6 @@ spec:
             - name: http
               containerPort: 8096
             - containerPort: 8920
-          securityContext:
-            privileged: true
           volumeMounts:
             - name: render-device
               mountPath: /dev/dri/renderD128
@@ -34,9 +32,6 @@ spec:
             - name: youtube
               mountPath: /data/youtube
       volumes:
-        - name: render-device
-          hostPath:
-            path: "/dev/dri/renderD128"
         - name: config
           iscsi:
             targetPortal: 192.168.0.2:3260
