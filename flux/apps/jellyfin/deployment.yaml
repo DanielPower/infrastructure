@@ -37,7 +37,7 @@ spec:
         - name: render-device
           hostPath:
             path: "/dev/dri/renderD128"
-        - nmae: config
+        - name: config
           iscsi:
             targetPortal: 192.168.0.2:3260
             iqn: iqn.2004-04.com.qnap:ts-464:iscsi.target-0.6c68d5
