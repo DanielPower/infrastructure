@@ -37,6 +37,7 @@ spec:
             lun: 0
             fsType: ext4
             readOnly: false
+            chapAuthSession: false
         - name: movies
           nfs:
             server: 192.168.0.2
