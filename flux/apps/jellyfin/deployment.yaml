@@ -19,8 +19,6 @@ spec:
               containerPort: 8096
             - containerPort: 8920
           volumeMounts:
-            - name: render-device
-              mountPath: /dev/dri/renderD128
             - name: config
               mountPath: /config
             - name: movies
