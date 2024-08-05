@@ -37,12 +37,13 @@ spec:
         - name: render-device
           hostPath:
             path: "/dev/dri/renderD128"
-        - name: config
-          nfs:
-            server: 192.168.0.2
-            path: /main/crispykube/jellyfin/config
+        - nmae: config
+          iscsi:
+            targetPortal: 192.168.0.2:3260
+            iqn: iqn.2004-04.com.qnap:ts-464:iscsi.target-0.6c68d5
+            lun: 0
+            fsType: ext4
             readOnly: false
-            options: vers=4.1
         - name: movies
           nfs:
             server: 192.168.0.2
