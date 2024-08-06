@@ -31,13 +31,11 @@ spec:
               mountPath: /data/youtube
       volumes:
         - name: config
-          iscsi:
-            targetPortal: 192.168.0.2:3260
-            iqn: iqn.2004-04.com.qnap:ts-464:iscsi.target-0.6c68d5
-            lun: 0
-            fsType: ext4
+          nfs:
+            server: 192.168.0.2
+            path: /fast/jellyfin/config
             readOnly: false
-            chapAuthSession: false
+            options: vers=4.1
         - name: movies
           nfs:
             server: 192.168.0.2
