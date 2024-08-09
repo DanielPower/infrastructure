@@ -19,6 +19,8 @@ spec:
               containerPort: 8096
             - containerPort: 8920
           volumeMounts:
+            - name: gpu
+              mountPath: /dev/dri/renderD128
             - name: config
               mountPath: /config
             - name: movies
@@ -30,6 +32,8 @@ spec:
             - name: youtube
               mountPath: /data/youtube
       volumes:
+        - name: gpu
+          hostPath: /dev/dri/renderD128
         - name: config
           nfs:
             server: 192.168.0.2
