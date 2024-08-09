@@ -19,8 +19,6 @@ spec:
               containerPort: 8096
             - containerPort: 8920
           volumeMounts:
-            - name: gpu
-              mountPath: /dev/dri/renderD128
             - name: config
               mountPath: /config
             - name: movies
@@ -32,10 +30,6 @@ spec:
             - name: youtube
               mountPath: /data/youtube
       volumes:
-        - name: gpu
-          hostPath:
-            path: /dev/dri/renderD128
-            type: CharDevice
         - name: config
           iscsi:
             targetPortal: 192.168.0.2
