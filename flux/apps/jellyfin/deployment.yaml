@@ -31,8 +31,6 @@ spec:
               mountPath: /data/music
             - name: youtube
               mountPath: /data/youtube
-          securityContext:
-            privileged: true
       volumes:
         - name: gpu
           hostPath:
