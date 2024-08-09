@@ -39,11 +39,12 @@ spec:
             path: /dev/dri/renderD128
             type: CharDevice
         - name: config
-          nfs:
-            server: 192.168.0.2
-            path: /fast/jellyfin/config
+          iscsi:
+            targetPortal: 192.168.0.2
+            iqn: iqn.2004-04.com.qnap:ts-464:iscsi.target-0.6c68d5
+            lun: 0
+            fsType: ext4
             readOnly: false
-            options: vers=4.1
         - name: movies
           nfs:
             server: 192.168.0.2
