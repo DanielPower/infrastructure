@@ -18,6 +18,11 @@ spec:
             - name: http
               containerPort: 8096
             - containerPort: 8920
+          livenessProbe:
+            httpGet:
+              - path: /health
+                port: 8096
+            initialDelaySeconds: 30
           volumeMounts:
             - name: config
               mountPath: /config
