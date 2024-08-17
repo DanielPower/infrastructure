@@ -4,3 +4,4 @@ namespace: twat-bot
 resources:
   - namespace.yaml
   - deployment.yaml
+  - secrets.yaml

@@ -14,6 +14,9 @@ spec:
       containers:
         - name: twat-bot
           image: ghcr.io/danielpower/twat-bot:main
+          envFrom:
+            - secretRef:
+                name: secrets
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
