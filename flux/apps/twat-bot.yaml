@@ -10,3 +10,7 @@ spec:
     name: flux-system
   path: "flux/apps/twat-bot"
   prune: true
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
