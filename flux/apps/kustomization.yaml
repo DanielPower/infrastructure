@@ -8,3 +8,4 @@ resources:
   - jellyfin.yaml
   - qbittorrent.yaml
   - balacord.yaml
+  - rainbot-sands.yaml
