@@ -17,6 +17,9 @@ spec:
           envFrom:
             - secretRef:
                 name: secrets
+          volumeMounts:
+            - name: data
+              mountPath: /data
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
@@ -26,3 +29,7 @@ spec:
             runAsUser: 1000
             seccompProfile:
               type: RuntimeDefault
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: data
