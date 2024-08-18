@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: balacord
+spec:
+  selector:
+    matchLabels:
+      app: balacord
+  template:
+    metadata:
+      labels:
+        app: balacord
+    spec:
+      containers:
+        - name: balacord
+          image: ghcr.io/danielpower/balacord:main
+          envFrom:
+            - secretRef:
+                name: secrets
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            runAsUser: 1000
+            seccompProfile:
+              type: RuntimeDefault
