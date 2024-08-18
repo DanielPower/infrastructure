@@ -7,3 +7,4 @@ resources:
   - twat-bot.yaml
   - jellyfin.yaml
   - qbittorrent.yaml
+  - balacord.yaml
