@@ -23,12 +23,12 @@ spec:
               mountPath: /config
             - name: downloads
               mountPath: /downloads
-          volumes:
-            - name: downloads
-              nfs:
-                server: 192.168.0.2
-                path: /main/downloads
-                readOnly: false
-            - name: config
-              persistentVolumeClaim:
-                claimName: config
+      volumes:
+        - name: downloads
+          nfs:
+            server: 192.168.0.2
+            path: /main/downloads
+            readOnly: false
+        - name: config
+          persistentVolumeClaim:
+            claimName: config
