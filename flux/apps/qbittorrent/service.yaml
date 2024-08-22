@@ -5,7 +5,8 @@ metadata:
 spec:
   selector:
     app: qbittorrent
-  type: ClusterIP
+  type: LoadBalancer
+  loadBalancerClass: tailscale
   ports:
     - name: http
       port: 80
