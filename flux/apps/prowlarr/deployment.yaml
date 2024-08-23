@@ -16,7 +16,7 @@ spec:
           image: lscr.io/linuxserver/prowlarr:latest
           ports:
             - name: http
-              containerPort: 8989
+              containerPort: 9696
           volumeMounts:
             - name: config
               mountPath: /config
