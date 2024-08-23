@@ -8,5 +8,6 @@ resources:
   - jellyfin.yaml
   - qbittorrent.yaml
   - sonarr.yaml
+  - prowlarr.yaml
   - balacord.yaml
   - rainbot-sands.yaml
