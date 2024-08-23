@@ -27,13 +27,13 @@ spec:
             - name: config
               mountPath: /config
             - name: movies
-              mountPath: /data/movies
+              mountPath: /data/media/movies
             - name: shows
-              mountPath: /data/shows
+              mountPath: /data/media/shows
             - name: music
-              mountPath: /data/music
+              mountPath: /data/media/music
             - name: youtube
-              mountPath: /data/youtube
+              mountPath: /data/media/youtube
       volumes:
         - name: config
           iscsi:
