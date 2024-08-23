@@ -27,13 +27,13 @@ spec:
             - name: config
               mountPath: /config
             - name: movies
-              mountPath: /data/media/movies
+              mountPath: /data/movies
             - name: shows
-              mountPath: /data/media/shows
+              mountPath: /data/shows
             - name: music
-              mountPath: /data/media/music
+              mountPath: /data/music
             - name: youtube
-              mountPath: /data/media/youtube
+              mountPath: /data/youtube
       volumes:
         - name: config
           iscsi:
@@ -45,20 +45,20 @@ spec:
         - name: movies
           nfs:
             server: 192.168.0.2
-            path: /main/movies
+            path: /main/media/movies
             readOnly: true
         - name: shows
           nfs:
             server: 192.168.0.2
-            path: /main/shows
+            path: /main/media/shows
             readOnly: true
         - name: youtube
           nfs:
             server: 192.168.0.2
-            path: /main/youtube
+            path: /main/media/youtube
             readOnly: true
         - name: music
           nfs:
             server: 192.168.0.2
-            path: /main/music
+            path: /main/media/music
             readOnly: true
