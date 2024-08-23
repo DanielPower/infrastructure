@@ -7,5 +7,6 @@ resources:
   - twat-bot.yaml
   - jellyfin.yaml
   - qbittorrent.yaml
+  - sonarr.yaml
   - balacord.yaml
   - rainbot-sands.yaml
