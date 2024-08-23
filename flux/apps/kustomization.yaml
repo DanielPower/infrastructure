@@ -9,5 +9,6 @@ resources:
   - qbittorrent.yaml
   - sonarr.yaml
   - prowlarr.yaml
+  - flaresolverr.yaml
   - balacord.yaml
   - rainbot-sands.yaml
