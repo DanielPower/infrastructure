@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: prowlarr
-          image: lscr.io/linuxserver/flaresolverr:latest
+          image: ghcr.io/flaresolverr/flaresolverr:latest
           ports:
             - name: http
               containerPort: 8191
