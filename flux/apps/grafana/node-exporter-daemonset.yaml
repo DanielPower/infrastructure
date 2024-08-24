@@ -37,8 +37,6 @@ spec:
           requests:
             cpu: 102m
             memory: 180Mi
-        securityContext:
-          privileged: true
         volumeMounts:
         - mountPath: /host/sys
           mountPropagation: HostToContainer
