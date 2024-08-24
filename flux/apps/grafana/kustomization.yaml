@@ -6,6 +6,6 @@ resources:
   - grafana-pvc.yaml
   - grafana-service.yaml
   - prometheus-deployment.yaml
-  - prometheus-pvc.yaml
+  - prometheus-config.yaml
   - prometheus-service.yaml
   - namespace.yaml
