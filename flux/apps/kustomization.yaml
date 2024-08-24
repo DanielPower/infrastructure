@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - keeb.yaml
   - personal-site.yaml
-  - yarr.yaml
   - twat-bot.yaml
   - jellyfin.yaml
   - qbittorrent.yaml
