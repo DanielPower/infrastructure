@@ -6,6 +6,7 @@ resources:
   - flaresolverr.yaml
   - jellyfin.yaml
   - metallb.yaml
+  - tailscale.yaml
   - monitoring.yaml
   - nfs-csi.yaml
   - nginx.yaml
