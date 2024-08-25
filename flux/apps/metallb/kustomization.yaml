@@ -4,8 +4,8 @@ namespace: metallb-system
 dependsOn:
   - name: metallb-helm
 resources:
-  # - ip-address-pool.yaml
-  # - l2-advertisement.yaml
+  - ip-address-pool.yaml
+  - l2-advertisement.yaml
   - namespace.yaml
   - helm-release.yaml
   - helm-repository.yaml
