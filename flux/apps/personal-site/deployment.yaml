@@ -1,14 +1,8 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
   name: personal-site
 spec:
-  replicas: 3
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 33%
-    type: RollingUpdate
   selector:
     matchLabels:
       app: personal-site
