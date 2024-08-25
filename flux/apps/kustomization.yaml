@@ -6,6 +6,7 @@ resources:
   - jellyfin.yaml
   - qbittorrent.yaml
   - monitoring.yaml
+  - nginx.yaml
   - sonarr.yaml
   - radarr.yaml
   - prowlarr.yaml
