@@ -6,6 +6,7 @@ resources:
   - jellyfin.yaml
   - metallb.yaml
   - monitoring.yaml
+  - nfs-csi.yaml
   - nginx.yaml
   - personal-site.yaml
   - prowlarr.yaml
