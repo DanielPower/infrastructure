@@ -1,15 +1,16 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - personal-site.yaml
-  - twat-bot.yaml
+  - balacord.yaml
+  - flaresolverr.yaml
   - jellyfin.yaml
-  - qbittorrent.yaml
+  - metallb.yaml
   - monitoring.yaml
   - nginx.yaml
-  - sonarr.yaml
-  - radarr.yaml
+  - personal-site.yaml
   - prowlarr.yaml
-  - flaresolverr.yaml
-  - balacord.yaml
+  - qbittorrent.yaml
+  - radarr.yaml
   - rainbot-sands.yaml
+  - sonarr.yaml
+  - twat-bot.yaml
