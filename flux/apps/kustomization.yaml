@@ -8,6 +8,7 @@ resources:
   - metallb.yaml
   - tailscale.yaml
   - grafana.yaml
+  - prometheus.yaml
   - nfs-csi.yaml
   - nginx.yaml
   - personal-site.yaml
