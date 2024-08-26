@@ -11,4 +11,3 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: metallb
-        namespace: metallb-system
