@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: ingress-nginx
+  name: prometheus-community
 spec:
   interval: 1h
-  url: https://kubernetes.github.io/ingress-nginx
+  url: https://prometheus-community.github.io/helm-charts
