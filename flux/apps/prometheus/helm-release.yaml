@@ -12,17 +12,17 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: prometheus-community
-      values:
-        grafana:
-          enabled: false
-        prometheus:
-          prometheusSpec:
-            storageSpec:
-              volumeClaimTemplate:
-                spec:
-                  storageClassName: nfs-csi
-                  accessModes:
-                    - ReadWriteOnce
-                  resources:
-                    requests:
-                      storage: 1Gi
+  values:
+    grafana:
+      enabled: false
+    prometheus:
+      prometheusSpec:
+        storageSpec:
+          volumeClaimTemplate:
+            spec:
+              storageClassName: nfs-csi
+              accessModes:
+                - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 1Gi
