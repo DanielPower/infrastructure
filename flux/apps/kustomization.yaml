@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - balacord.yaml
   - cert-manager.yaml
+  - cloudflare-ddns.yaml
   - flaresolverr.yaml
   - jellyfin.yaml
   - metallb.yaml
