@@ -10,3 +10,7 @@ spec:
     name: flux-system
   path: "flux/apps/cloudflare-ddns"
   prune: true
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
