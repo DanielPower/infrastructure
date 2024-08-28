@@ -49,9 +49,9 @@ spec:
               memory: 750Mi
           volumeMounts:
             - mountPath: /var/lib/grafana
-              name: grafana-pv
+              name: data
       volumes:
-        - name: grafana-pv
+        - name: data
           persistentVolumeClaim:
-            claimName: grafana-pvc
+            claimName: grafana
 
