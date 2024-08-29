@@ -24,6 +24,8 @@ spec:
               port: 8096
             initialDelaySeconds: 120
           volumeMounts:
+            - name: dev-dri
+              mountPath: /dev/dri
             - name: config
               mountPath: /config
             - name: movies
@@ -35,6 +37,10 @@ spec:
             - name: youtube
               mountPath: /data/youtube
       volumes:
+        - name: dev-dri
+          hostPath:
+            path: /dev/dri
+            type: Directory
         - name: config
           iscsi:
             targetPortal: 192.168.0.2
