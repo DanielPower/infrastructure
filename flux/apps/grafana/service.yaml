@@ -5,11 +5,9 @@ metadata:
 spec:
   selector:
     app: grafana
-  type: LoadBalancer
-  loadBalancerClass: tailscale
+  type: ClusterIP
   ports:
     - name: http
       port: 80
       protocol: TCP
       targetPort: http-grafana
-  sessionAffinity: None
