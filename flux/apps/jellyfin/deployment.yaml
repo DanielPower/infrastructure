@@ -23,6 +23,8 @@ spec:
               path: /health
               port: 8096
             initialDelaySeconds: 120
+          securityContext:
+            privileged: true
           env:
             - name: DOCKER_MODS
               value: linuxserver/mods:jellyfin-amd
