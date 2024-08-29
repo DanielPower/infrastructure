@@ -23,6 +23,9 @@ spec:
               path: /health
               port: 8096
             initialDelaySeconds: 120
+          env:
+            - name: DOCKER_MODS
+              value: linuxserver/mods:jellyfin-amd
           volumeMounts:
             - name: dev-dri
               mountPath: /dev/dri
