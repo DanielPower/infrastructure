@@ -8,7 +8,8 @@ spec:
   type: LoadBalancer
   loadBalancerClass: tailscale
   ports:
-    - port: 80
+    - name: http
+      port: 80
       protocol: TCP
       targetPort: http-grafana
   sessionAffinity: None
