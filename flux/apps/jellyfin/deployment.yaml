@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: jellyfin
 spec:
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: jellyfin
@@ -14,8 +16,6 @@ spec:
       containers:
         - name: jellyfin
           image: jellyfin/jellyfin:latest
-          strategy:
-            type: Recreate
           ports:
             - name: http
               containerPort: 8096
