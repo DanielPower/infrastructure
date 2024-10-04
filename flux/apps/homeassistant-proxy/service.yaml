@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: homeassistant
 spec:
-  clusterIP: None
+  type: LoadBalancer
   loadBalancerClass: tailscale
   ports:
     - name: http
