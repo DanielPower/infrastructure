@@ -19,3 +19,4 @@ resources:
   - rainbot-sands.yaml
   - sonarr.yaml
   - twat-bot.yaml
+  - homeassistant-proxy.yaml
