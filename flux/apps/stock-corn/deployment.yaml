@@ -17,6 +17,9 @@ spec:
           envFrom:
             - secretRef:
                 name: secrets
+          env:
+            - name: DATABASE_PATH
+              value: /data/db.sqlite
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
