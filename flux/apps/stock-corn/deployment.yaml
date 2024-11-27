@@ -13,12 +13,12 @@ spec:
     spec:
       containers:
         - name: stock-corn
-          image: ghcr.io/danielpower/stock-corn:master@sha256:d9ec799fd30cdcd10253855e2dbf8e1fdc650be879e971eb24b97a867ffd44c8
+          image: ghcr.io/danielpower/stock-corn:master@sha256:378dd58548dd578ce50cc5068ba3a038f36884af92cecfc5e213c809f261587a
           envFrom:
             - secretRef:
                 name: secrets
           env:
-            - name: DATABASE_PATH
+            - name: DATABASE_URL
               value: /data/db.sqlite
           securityContext:
             allowPrivilegeEscalation: false
