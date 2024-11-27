@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: stock-corn
-          image: ghcr.io/danielpower/stock-corn:master@sha256:61ae82dfce5fd83d1af81521f75dbff4c1252079b9689386ed53a69d48d04e26
+          image: ghcr.io/danielpower/stock-corn:master@sha256:3e0e91fe11422be6b31908e6b95bdc2b69d9a56e3a5d47674b30c78fe856015e
           envFrom:
             - secretRef:
                 name: secrets
