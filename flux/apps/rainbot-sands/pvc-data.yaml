@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: data
+  name: rainbot-sands
 spec:
   storageClassName: nfs-csi
   accessModes:
