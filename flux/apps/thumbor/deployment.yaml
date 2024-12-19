@@ -23,3 +23,6 @@ spec:
             runAsUser: 1000
             seccompProfile:
               type: RuntimeDefault
+          ports:
+            - name: http
+              containerPort: 80
