@@ -14,6 +14,9 @@ spec:
       containers:
         - name: thumbor
           image: ghcr.io/minimalcompact/thumbor
+          env:
+            - name: THUMBOR_PORT
+              value: 80
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
