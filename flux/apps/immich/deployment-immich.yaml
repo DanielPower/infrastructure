@@ -18,15 +18,11 @@ spec:
             - name: http
               containerPort: 2283
           env:
-            - name: DB_DATABASE_NAME
-              value: immich
-            - name: DB_USERNAME
-              value: immich
-            - name: DB_PASSWORD
+            - name: DB_DATABASE_URL
               valueFrom:
                 secretKeyRef:
-                  name: secrets
-                  key: DB_PASSWORD
+                  name: postgres
+                  key: uri
             - name: IMMICH_PORT
               value: "2283"
             - name: REDIS_PORT
