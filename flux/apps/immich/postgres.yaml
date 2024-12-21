@@ -9,6 +9,10 @@ spec:
   postgresql:
     shared_preload_libraries:
       - "vectors.so"
+    roles:
+      - name: immich
+        superuser: true
+        login: true
   bootstrap:
     initdb:
       database: immich
