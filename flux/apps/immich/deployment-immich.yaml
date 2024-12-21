@@ -34,7 +34,7 @@ spec:
               value: /photos
           volumeMounts:
             - name: photos
-              mountPath: /photos
+              mountPath: /usr/src/app/upload
       volumes:
         - name: photos
           persistentVolumeClaim:
