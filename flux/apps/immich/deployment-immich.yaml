@@ -21,7 +21,7 @@ spec:
             - name: DB_URL
               valueFrom:
                 secretKeyRef:
-                  name: immich-postgres-app-superuser
+                  name: immich-postgres-superuser
                   key: uri
             - name: REDIS_PORT
               value: "6379"
