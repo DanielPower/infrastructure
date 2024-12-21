@@ -6,7 +6,7 @@ resources:
   - deployment-immich.yaml
   - deployment-postgres.yaml
   - deployment-redis.yaml
-  - service-immich-yaml
+  - service-immich.yaml
   - service-postgres.yaml
   - service-redis.yaml
   - pvc-postgres.yaml
