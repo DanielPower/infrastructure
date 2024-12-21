@@ -31,4 +31,4 @@ spec:
               value: "2283"
               # TODO REMOVE THIS
             - name: IMMICH_IGNORE_MOUNT_CHECK_ERRORS
-              value: true
+              value: "true"
