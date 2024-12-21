@@ -27,3 +27,7 @@ spec:
                 secretKeyRef:
                   name: secrets
                   key: DB_PASSWORD
+            - name: IMMICH_PORT
+              value: "2283"
+            - name: REDIS_PORT
+              value: "6379"
