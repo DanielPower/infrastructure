@@ -4,7 +4,7 @@ metadata:
   name: immich
 spec:
   selector:
-    app: immich
+    app: immich-server
   type: ClusterIP
   ports:
     - port: 80
