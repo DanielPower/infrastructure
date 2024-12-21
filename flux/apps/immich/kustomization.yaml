@@ -8,5 +8,4 @@ resources:
   - service-immich.yaml
   - service-redis.yaml
   - ingress.yaml
-  - secrets.yaml
   - postgres.yaml
