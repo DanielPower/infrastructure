@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: immich-redis
+  name: redis
 spec:
   selector:
     matchLabels:
-      app: immich-redis
+      app: redis
   template:
     metadata:
       labels:
-        app: immich-redis
+        app: redis
     spec:
       containers:
-        - name: immich-redis
+        - name: redis
           image: docker.io/redis:6.2-alpine
           ports:
             - containerPort: 6379
