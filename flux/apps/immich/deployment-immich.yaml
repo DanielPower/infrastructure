@@ -30,5 +30,12 @@ spec:
             - name: IMMICH_PORT
               value: "2283"
               # TODO REMOVE THIS
-            - name: IMMICH_IGNORE_MOUNT_CHECK_ERRORS
-              value: "true"
+            - name: UPLOAD_PATH
+              value: /photos
+          volumeMounts:
+            - name: photos
+              mountPath: /photos
+      volumes:
+        - name: photos
+          persistentVolumeClaim:
+            claimName: photos
