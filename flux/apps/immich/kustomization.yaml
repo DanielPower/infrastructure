@@ -9,3 +9,4 @@ resources:
   - service-redis.yaml
   - ingress.yaml
   - postgres.yaml
+  - pvc-immich.yaml
