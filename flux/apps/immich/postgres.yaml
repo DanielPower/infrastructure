@@ -9,9 +9,10 @@ spec:
   postgresql:
     shared_preload_libraries:
       - "vectors.so"
-  enableSuperuserAccess: true
   bootstrap:
     initdb:
+      database: immich
+      owner: immich
       postInitSQL:
         - CREATE EXTENSION IF NOT EXISTS "vectors";
         - CREATE EXTENSION IF NOT EXISTS "cube" CASCADE;
