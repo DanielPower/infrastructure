@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - photos.danielpower.ca
+        - immich.danielpower.ca
       secretName: photos-tls
   rules:
-    - host: photos.danielpower.ca
+    - host: immich.danielpower.ca
       http:
         paths:
           - path: /
