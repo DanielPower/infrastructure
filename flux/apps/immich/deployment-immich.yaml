@@ -23,7 +23,3 @@ spec:
                 secretKeyRef:
                   name: immich-postgres-app
                   key: uri
-            - name: IMMICH_PORT
-              value: "2283"
-            - name: REDIS_PORT
-              value: "6379"
