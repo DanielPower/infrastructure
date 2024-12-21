@@ -29,9 +29,6 @@ spec:
               value: redis.immich.svc.cluster.local
             - name: IMMICH_PORT
               value: "2283"
-              # TODO REMOVE THIS
-            - name: UPLOAD_LOCATION
-              value: /photos
           volumeMounts:
             - name: photos
               mountPath: /usr/src/app/upload
