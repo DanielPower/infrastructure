@@ -8,7 +8,6 @@ parameters:
   share: "/main"
   subDir: "crispykube/${pvc.metadata.namespace}/${pvc.metadata.name}"
   onDelete: "archive"
-  mountPermissions: "0777"
 mountOptions:
   - "vers=4.1"
 reclaimPolicy: Delete
