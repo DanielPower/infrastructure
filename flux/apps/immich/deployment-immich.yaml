@@ -30,9 +30,16 @@ spec:
             - name: IMMICH_PORT
               value: "2283"
           volumeMounts:
-            - name: photos
+            - name: immich
               mountPath: /usr/src/app/upload
+            - name: photos
+              mountPath: /photos
       volumes:
-        - name: photos
+        - name: immich
           persistentVolumeClaim:
             claimName: photos
+        - name: photos
+          nfs:
+            server: 192.168.0.2
+            path: /main/media/pictures
+            readOnly: false
