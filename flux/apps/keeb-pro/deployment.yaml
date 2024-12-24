@@ -16,12 +16,14 @@ spec:
           image: registry.gitlab.com/danielpower/keeb-pro:latest
           imagePullPolicy: Always
           securityContext:
+            runAsUser: 101 # NGINX default user ID
+            runAsGroup: 101 # NGINX default group ID
+            fsGroup: 101 # Set group ownership of mounted volumes
             allowPrivilegeEscalation: false
             capabilities:
               drop:
                 - ALL
             runAsNonRoot: true
-            runAsUser: 1000
             seccompProfile:
               type: RuntimeDefault
           ports:
