@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: keeb-pro
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - danielpower.ca
+        - www.danielpower.ca
+      secretName: keeb-pro-tls
+  rules:
+    - host: keeb.danielpower.ca
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: keeb-pro
+                port:
+                  name: http
