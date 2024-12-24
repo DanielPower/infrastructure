@@ -13,13 +13,11 @@ spec:
     spec:
       containers:
         - name: keeb-pro
-          image: registry.gitlab.com/danielpower/keeb-pro:latest
+          image: ghcr.io/danielpower/keeb-pro:master@sha256:619daf1421decce0a5dfc5dedc8d7d7fe21f839083d29156fbf01c89d20109dd
           imagePullPolicy: Always
           securityContext:
-            runAsUser: 101 # NGINX default user ID
-            runAsGroup: 101 # NGINX default group ID
-            fsGroup: 101 # Set group ownership of mounted volumes
             allowPrivilegeEscalation: false
+            runAsUser: 1000
             capabilities:
               drop:
                 - ALL
@@ -28,4 +26,4 @@ spec:
               type: RuntimeDefault
           ports:
             - name: http
-              containerPort: 5000
+              containerPort: 8080
