@@ -15,7 +15,7 @@ spec:
         - name: immich-server
           image: ghcr.io/immich-app/immich-server:v1.124.2
           ports:
-            - containerPort: 3301
+            - containerPort: 2283
           env:
             - name: DB_URL
               valueFrom:
