@@ -4,6 +4,7 @@ namespace: immich
 resources:
   - namespace.yaml
   - deployment-immich.yaml
+  - deployment-immich-ml.yaml
   - deployment-redis.yaml
   - service-immich.yaml
   - service-redis.yaml
