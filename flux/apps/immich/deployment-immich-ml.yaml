@@ -28,4 +28,4 @@ spec:
             - name: REDIS_HOSTNAME
               value: redis.immich.svc.cluster.local
             - name: IMMICH_PORT
-              value: "2283"
+              value: "3301"
