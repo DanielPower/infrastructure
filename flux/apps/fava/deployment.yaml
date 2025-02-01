@@ -16,13 +16,15 @@ spec:
           image: yegle/fava:v1.30
           ports:
             - name: http
-              containerPort: 5000
+              containerPort: 80
           volumeMounts:
             - name: beancount
               mountPath: /beancount
           env:
             - name: BEANCOUNT_FILE
               value: /beancount/ledger.bean
+            - name: PORT
+              value: 80
       volumes:
         - name: beancount
           nfs:
