@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - balacord.yaml
   - stock-corn.yaml
-  - immich.yaml
+  # - immich.yaml
   - fava.yaml
   - keeb-pro.yaml
   - cert-manager.yaml
