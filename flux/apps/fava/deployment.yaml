@@ -22,7 +22,7 @@ spec:
               mountPath: /beancount
           env:
             - name: BEANCOUNT_FILE
-              value: /beancount/ledger.bean
+              value: /beancount/ledger.beancount
             - name: FAVA_PORT
               value: "5000"
       volumes:
