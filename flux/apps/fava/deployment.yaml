@@ -30,4 +30,3 @@ spec:
           nfs:
             server: 192.168.0.2
             path: /main/documents/beancount
-            readOnly: true
