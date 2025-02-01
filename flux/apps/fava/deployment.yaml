@@ -24,7 +24,7 @@ spec:
             - name: BEANCOUNT_FILE
               value: /beancount/ledger.bean
             - name: PORT
-              value: 80
+              value: "80"
       volumes:
         - name: beancount
           nfs:
