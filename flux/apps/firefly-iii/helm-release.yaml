@@ -15,6 +15,5 @@ spec:
     firefly-db:
       storage:
         class: nfs-csi
-        accessModes:
-          - ReadWriteOnce
+        accessModes: ReadWriteMany
         dataSize: 1Gi
