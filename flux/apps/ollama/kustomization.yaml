@@ -4,3 +4,5 @@ namespace: ollama
 resources:
   - namespace.yaml
   - ingress.yaml
+  - service.yaml
+  - endpoints.yaml
