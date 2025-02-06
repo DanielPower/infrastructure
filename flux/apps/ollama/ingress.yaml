@@ -18,4 +18,4 @@ spec:
           service: 
             name: ollama
             port: 
-              name: ollama
+              - 80

@@ -7,5 +7,3 @@ subsets:
       - ip: 192.168.0.250
     ports:
       - port: 11434
-        protocol: TCP
-        name: ollama
