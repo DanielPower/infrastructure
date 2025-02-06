@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ollama
+  annotations:
+    tailscale.com/hostname: homeassistant
+spec:
+  type: LoadBalancer
+  loadBalancerClass: tailscale
+  ports:
+    - name: ollama
+      port: 80
+      protocol: TCP
+      targetPort: 11434
