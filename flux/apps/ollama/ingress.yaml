@@ -8,6 +8,10 @@ metadata:
     nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required'
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+        - ollama.danielpower.ca
+      secretName: ollama-tls
   rules:
   - host: ollama.danielpower.ca
     http:
