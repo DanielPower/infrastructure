@@ -14,7 +14,13 @@ spec:
         kind: HelmRepository
         name: tailscale
         namespace: tailscale
-  values:
-    oauth:
-      clientId: "{{ .Values.oauthClientId }}"
-      clientSecret: "{{ .Values.oauthClientSecret }}"
+  valuesFrom:
+    - kind: Secret
+      name: secrets
+      valuesKey: oauthClientId
+      targetPath: operator.oauth.clientId
+    - kind: Secret
+      name: secrets
+      valuesKey: oauthClientSecret
+      targetPath: operator.oauth.clientSecret
+
