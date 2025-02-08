@@ -18,9 +18,9 @@ spec:
     - kind: Secret
       name: secrets
       valuesKey: oauthClientId
-      targetPath: operator.oauth.clientId
+      targetPath: oauth.clientId
     - kind: Secret
       name: secrets
       valuesKey: oauthClientSecret
-      targetPath: operator.oauth.clientSecret
+      targetPath: oauth.clientSecret
 
