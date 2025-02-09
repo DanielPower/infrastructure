@@ -4,7 +4,6 @@ resources:
   - balacord.yaml
   - stock-corn.yaml
   - immich.yaml
-  - firefly-iii.yaml
   - keeb-pro.yaml
   - cert-manager.yaml
   - cloudflare-ddns.yaml
