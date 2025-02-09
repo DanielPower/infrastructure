@@ -5,7 +5,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
-  ingressClassName: actual-budget
+  ingressClassName: nginx
   tls:
     - hosts:
         - actual-budget.danielpower.ca
