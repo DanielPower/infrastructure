@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - helm-release.yaml
   - helm-repository.yaml
-  - storage-class.yaml
+  - storage-class-hdd.yaml
+  - storage-class-ssd.yaml
