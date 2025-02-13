@@ -50,12 +50,8 @@ spec:
             path: /dev/dri
             type: Directory
         - name: config
-          iscsi:
-            targetPortal: 192.168.0.2
-            iqn: iqn.2004-04.com.qnap:ts-464:iscsi.target-0.6c68d5
-            lun: 0
-            fsType: ext4
-            readOnly: false
+          persistentVolumeClaim:
+            claimName: config
         - name: movies
           nfs:
             server: 192.168.0.2
@@ -75,4 +71,4 @@ spec:
           nfs:
             server: 192.168.0.2
             path: /main/media/music
-            readOnly: false
+            readOnly: true
