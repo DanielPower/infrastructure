@@ -27,3 +27,4 @@ resources:
   - twat-bot.yaml
   - homeassistant-proxy.yaml
   - cnpg.yaml
+  - webhook-receiver.yaml
