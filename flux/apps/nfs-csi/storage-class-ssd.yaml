@@ -7,6 +7,7 @@ parameters:
   server: "192.168.0.2"
   share: "/fast"
   subDir: "crispykube/${pvc.metadata.namespace}/${pvc.metadata.name}"
+  onDelete: retain
 mountOptions:
   - "vers=4.1"
 reclaimPolicy: Delete
