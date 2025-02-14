@@ -12,7 +12,7 @@ resources:
   # - ollama.yaml
   # - thumbor.yaml
   # - jellyfin.yaml
-  # - metallb.yaml
+  - metallb.yaml
   # - tailscale.yaml
   # - grafana.yaml
   # - prometheus.yaml
