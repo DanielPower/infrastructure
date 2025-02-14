@@ -7,8 +7,8 @@ resources:
   - immich.yaml
   - keeb-pro.yaml
   - cert-manager.yaml
-  # - cloudflare-ddns.yaml
-  # - flaresolverr.yaml
+  - cloudflare-ddns.yaml
+  - flaresolverr.yaml
   - ollama.yaml
   - thumbor.yaml
   - jellyfin.yaml
@@ -19,12 +19,12 @@ resources:
   - nfs-csi.yaml
   - nginx.yaml
   - personal-site.yaml
-  # - prowlarr.yaml
-  # - qbittorrent.yaml
-  # - radarr.yaml
+  - prowlarr.yaml
+  - qbittorrent.yaml
+  - radarr.yaml
   - rainbot-sands.yaml
-  # - sonarr.yaml
+  - sonarr.yaml
   - twat-bot.yaml
-  # - homeassistant-proxy.yaml
+  - homeassistant-proxy.yaml
   - cnpg.yaml
   - webhook-receiver.yaml
