@@ -18,7 +18,7 @@ resources:
   # - prometheus.yaml
   - nfs-csi.yaml
   - nginx.yaml
-  # - personal-site.yaml
+  - personal-site.yaml
   # - prowlarr.yaml
   # - qbittorrent.yaml
   # - radarr.yaml
