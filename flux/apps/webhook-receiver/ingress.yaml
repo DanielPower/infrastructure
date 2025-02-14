@@ -20,4 +20,4 @@ spec:
               service:
                 name: webhook-receiver
                 port:
-                  name: 80
+                  number: 80
