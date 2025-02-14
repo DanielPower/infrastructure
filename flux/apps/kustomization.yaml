@@ -8,12 +8,12 @@ resources:
   - keeb-pro.yaml
   - cert-manager.yaml
   - cloudflare-ddns.yaml
-  - flaresolverr.yaml
+  # - flaresolverr.yaml
   - ollama.yaml
   - thumbor.yaml
   - jellyfin.yaml
   - metallb.yaml
-  # - tailscale.yaml
+  - tailscale.yaml
   - grafana.yaml
   - prometheus.yaml
   - nfs-csi.yaml
