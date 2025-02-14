@@ -4,6 +4,6 @@ namespace: tailscale
 resources:
   - helm-release.yaml
   - helm-repository.yaml
-  - subnet-router.yaml
+  # - subnet-router.yaml
   - namespace.yaml
   - secrets.yaml
