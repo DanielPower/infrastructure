@@ -1,0 +1,9 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: webapp
+spec:
+  interval: 60m
+  url: https://github.com/danielpower/infrastructure
+  ref:
+    branch: master
