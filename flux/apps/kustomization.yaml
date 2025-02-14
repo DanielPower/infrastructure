@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   # - actual-budget.yaml
   # - balacord.yaml
-  # - stock-corn.yaml
+  - stock-corn.yaml
   # - immich.yaml
   # - keeb-pro.yaml
   - cert-manager.yaml
