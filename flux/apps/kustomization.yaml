@@ -13,7 +13,7 @@ resources:
   - thumbor.yaml
   - jellyfin.yaml
   - metallb.yaml
-  # - tailscale.yaml
+  - tailscale.yaml
   - grafana.yaml
   - prometheus.yaml
   - nfs-csi.yaml
