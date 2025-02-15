@@ -8,8 +8,7 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - danielpower.ca
-        - www.danielpower.ca
+        - keeb.danielpower.ca
       secretName: keeb-pro-tls
   rules:
     - host: keeb.danielpower.ca
