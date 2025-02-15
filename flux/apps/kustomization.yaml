@@ -8,23 +8,23 @@ resources:
   - keeb-pro.yaml
   - cert-manager.yaml
   - cloudflare-ddns.yaml
-  - flaresolverr.yaml
+  # - flaresolverr.yaml
   - ollama.yaml
   - thumbor.yaml
   - jellyfin.yaml
   - metallb.yaml
-  - tailscale.yaml
+  # - tailscale.yaml
   - grafana.yaml
   - prometheus.yaml
   - nfs-csi.yaml
   - nginx.yaml
   - personal-site.yaml
-  - prowlarr.yaml
-  - qbittorrent.yaml
-  - radarr.yaml
+  # - prowlarr.yaml
+  # - qbittorrent.yaml
+  # - radarr.yaml
   - rainbot-sands.yaml
-  - sonarr.yaml
+  # - sonarr.yaml
   - twat-bot.yaml
-  - homeassistant-proxy.yaml
+  # - homeassistant-proxy.yaml
   - cnpg.yaml
   - webhook-receiver.yaml
