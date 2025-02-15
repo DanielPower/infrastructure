@@ -6,4 +6,4 @@ resources:
   - helm-repository.yaml
   # - subnet-router.yaml
   - namespace.yaml
-  # - secrets.yaml
+  - secrets.yaml
