@@ -3,6 +3,6 @@ kind: Kustomization
 namespace: stock-corn
 resources:
   - namespace.yaml
-  # - deployment.yaml
-  # - secrets.yaml
-  # - pvc.yaml
+  - deployment.yaml
+  - secrets.yaml
+  - pvc.yaml

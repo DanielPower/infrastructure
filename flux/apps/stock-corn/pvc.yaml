@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: stock-corn
 spec:
-  storageClassName: nfs-csi
+  storageClassName: nfs-csi-ssd
   accessModes:
     - ReadWriteOnce
   resources:
