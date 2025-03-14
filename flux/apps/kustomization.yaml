@@ -14,7 +14,6 @@ resources:
   - jellyfin.yaml
   - metallb.yaml
   - tailscale.yaml
-  - grafana.yaml
   - nfs-csi.yaml
   - nginx.yaml
   - personal-site.yaml
