@@ -8,5 +8,5 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: "flux/apps/keeb-pro"
+  path: "flux/apps/osu-replay-viewer"
   prune: true
