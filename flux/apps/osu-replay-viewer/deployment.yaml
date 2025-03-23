@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: osu-replay-viewer
+spec:
+  selector:
+    matchLabels:
+      app: osu-replay-viewer
+  template:
+    metadata:
+      labels:
+        app: osu-replay-viewer
+    spec:
+      containers:
+        - name: osu-replay-viewer
+          image: ghcr.io/danielpower/osu-web-replay-viewer:main@sha256:fca5397dbefe6057d9427bb2e04f477bb9671253694504ce8662427de111bf19
+          imagePullPolicy: Always
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsUser: 1000
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            seccompProfile:
+              type: RuntimeDefault
+          ports:
+            - name: http
+              containerPort: 3000

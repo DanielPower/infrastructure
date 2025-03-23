@@ -8,6 +8,7 @@ resources:
   - keeb-pro.yaml
   - cert-manager.yaml
   - cloudflare-ddns.yaml
+  - osu-replay-viewer.yaml
   - flaresolverr.yaml
   - ollama.yaml
   - thumbor.yaml
