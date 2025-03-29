@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: balacord
-          image: ghcr.io/danielpower/balacord:main@sha256:105b94059fbc60972198fc7cbc6e75c609867354a4fe7c3c743a521d6087f5d0
+          image: ghcr.io/danielpower/balacord:main@sha256:c7cef927762b075b373971f54b788a88b61bb25cdfc80720fdda8568f8ad8629
           envFrom:
             - secretRef:
                 name: secrets
