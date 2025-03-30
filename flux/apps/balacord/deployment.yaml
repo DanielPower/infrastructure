@@ -17,6 +17,32 @@ spec:
           envFrom:
             - secretRef:
                 name: secrets
+            - name: PGUSER
+              valueFrom:
+                secretKeyRef:
+                  name: immich-postgres-app
+                  key: user
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: immich-postgres-app
+                  key: password
+            - name: PGHOST
+              valueFrom:
+                secretKeyRef:
+                  name: immich-postgres-app
+                  key: host
+            - name: PGPORT
+              valueFrom:
+                secretKeyRef:
+                  name: immich-postgres-app
+                  key: port
+            - name: PGDATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: immich-postgres-app
+                  key: dbname
+              
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
