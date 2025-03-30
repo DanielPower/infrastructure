@@ -21,27 +21,27 @@ spec:
             - name: PGUSER
               valueFrom:
                 secretKeyRef:
-                  name: immich-postgres-app
+                  name: balacord-postgres-app
                   key: user
             - name: PGPASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: immich-postgres-app
+                  name: balacord-postgres-app
                   key: password
             - name: PGHOST
               valueFrom:
                 secretKeyRef:
-                  name: immich-postgres-app
+                  name: balacord-postgres-app
                   key: host
             - name: PGPORT
               valueFrom:
                 secretKeyRef:
-                  name: immich-postgres-app
+                  name: balacord-postgres-app
                   key: port
             - name: PGDATABASE
               valueFrom:
                 secretKeyRef:
-                  name: immich-postgres-app
+                  name: balacord-postgres-app
                   key: dbname
           securityContext:
             allowPrivilegeEscalation: false
