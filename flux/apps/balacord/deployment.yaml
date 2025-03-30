@@ -17,6 +17,7 @@ spec:
           envFrom:
             - secretRef:
                 name: secrets
+          env:
             - name: PGUSER
               valueFrom:
                 secretKeyRef:
@@ -42,7 +43,6 @@ spec:
                 secretKeyRef:
                   name: immich-postgres-app
                   key: dbname
-              
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
