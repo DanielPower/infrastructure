@@ -25,7 +25,7 @@ spec:
               topologyKey: "kubernetes.io/hostname"
       containers:
         - name: personal-site
-          image: ghcr.io/danielpower/personal-site:main
+          image: ghcr.io/danielpower/personal-site:main@sha256:eb73227252b5a1d25f82a271f9c75172e510cf7e67947af5a2fb4aa1eb9e65d6
           imagePullPolicy: Always
           env:
             - name: PUBLIC_NODE_NAME
