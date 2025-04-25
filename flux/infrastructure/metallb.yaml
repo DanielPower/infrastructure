@@ -1,13 +1,12 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: nginx
+  name: metallb
   namespace: flux-system
 spec:
   interval: 1h0m0s
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: "flux/apps/nginx"
+  path: "flux/infrastructure/metallb"
   prune: true
-
