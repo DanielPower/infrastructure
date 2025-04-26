@@ -7,3 +7,7 @@ resources:
   - nfs-csi.yaml
   - nginx.yaml
   - cnpg.yaml
+  - cloudflare-ddns.yaml
+  - moby.yaml
+  - homeassistant-proxy.yaml
+  - webhook-receiver.yaml
