@@ -1,6 +1,7 @@
 locals {
   cluster_name     = "homelab"
   cluster_endpoint = "https://192.168.0.11:6443"
+  talos_version = "1.9.5"
 
   control_plane_nodes = {
     "linie" = {
@@ -73,6 +74,7 @@ data "talos_machine_configuration" "control_plane" {
   cluster_name     = local.cluster_name
   machine_secrets  = talos_machine_secrets.this.machine_secrets
   cluster_endpoint = local.cluster_endpoint
+  talos_version    = local.talos_version
   machine_type     = "controlplane"
 }
 
@@ -80,6 +82,7 @@ data "talos_machine_configuration" "worker" {
   cluster_name     = local.cluster_name
   machine_secrets  = talos_machine_secrets.this.machine_secrets
   cluster_endpoint = local.cluster_endpoint
+  talos_version = local.talos_version
   machine_type     = "worker"
 }
 
@@ -92,7 +95,6 @@ resource "talos_machine_configuration_apply" "control_plane" {
     templatefile("./talos/templates/hostname.yaml", { hostname = each.value.hostname }),
     templatefile("./talos/templates/disk.yaml", {
       disk  = each.value.disk,
-      image = ""
     })
   ]
 }
@@ -106,7 +108,6 @@ resource "talos_machine_configuration_apply" "workers" {
     templatefile("./talos/templates/hostname.yaml", { hostname = each.value.hostname }),
     templatefile("./talos/templates/disk.yaml", {
       disk  = each.value.disk,
-      image = lookup(each.value, "image", "")
     })
   ]
 }
