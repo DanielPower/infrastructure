@@ -8,7 +8,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: "flux/system/cloudflare-ddns"
+  path: "flux/infrastructure/cloudflare-ddns"
   prune: true
   decryption:
     provider: sops

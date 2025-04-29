@@ -8,5 +8,5 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: "flux/system/homeassistant-proxy"
+  path: "flux/infrastructure/homeassistant-proxy"
   prune: true

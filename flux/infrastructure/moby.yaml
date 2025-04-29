@@ -8,7 +8,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: "flux/system/moby"
+  path: "flux/infrastructure/moby"
   prune: true
   decryption:
     provider: sops
