@@ -21,3 +21,6 @@ spec:
               storageClassName: nfs-csi
               accessModes:
                 - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 10Gi
