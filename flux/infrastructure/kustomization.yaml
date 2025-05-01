@@ -11,3 +11,4 @@ resources:
   - moby.yaml
   - homeassistant-proxy.yaml
   - webhook-receiver.yaml
+  - prometheus.yaml
