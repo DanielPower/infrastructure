@@ -12,19 +12,3 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: prometheus-community
-  values:
-    prometheus:
-      prometheusSpec:
-        storageSpec:
-          volumeClaimTemplate:
-            spec:
-              storageClassName: nfs-csi
-              accessModes:
-                - ReadWriteOnce
-              resources:
-                requests:
-                  storage: 10Gi
-    prometheusOperator:
-      admissionWebhooks:
-        certManager:
-          enabled: true
