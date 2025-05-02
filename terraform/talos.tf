@@ -54,12 +54,6 @@ locals {
       endpoint = "192.168.0.18"
       ip       = "192.168.0.18"
     }
-    "richter" = {
-      hostname = "worker-richter"
-      disk     = "/dev/nvme0n1"
-      endpoint = "192.168.0.19"
-      ip       = "192.168.0.19"
-    }
   }
 }
 
