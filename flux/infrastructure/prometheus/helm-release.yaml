@@ -28,3 +28,5 @@ spec:
       admissionWebhook:
         certManager:
           enabled: true
+    kubelet:
+      enabled: true
