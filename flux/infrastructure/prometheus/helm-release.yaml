@@ -24,3 +24,7 @@ spec:
               resources:
                 requests:
                   storage: 10Gi
+    prometheusOperator:
+      admissionWebhook:
+        certManager:
+          enabled: true
