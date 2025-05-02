@@ -12,3 +12,15 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: prometheus-community
+  values:
+    prometheus:
+      prometheusSpec:
+        storageSpec:
+          volumeClaimTemplate:
+            spec:
+              storageClassName: nfs-csi-ssd
+              accessModes:
+                - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 10Gi
