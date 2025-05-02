@@ -11,18 +11,6 @@ spec:
       labels:
         app: personal-site
     spec:
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: app
-                    operator: In
-                    values:
-                      - personal-site
-              matchLabelKeys:
-                - pod-template-hash
-              topologyKey: "kubernetes.io/hostname"
       containers:
         - name: personal-site
           image: ghcr.io/danielpower/personal-site:main@sha256:eb73227252b5a1d25f82a271f9c75172e510cf7e67947af5a2fb4aa1eb9e65d6
