@@ -16,7 +16,7 @@ spec:
           env:
             - name: CONFIG_PATH
               value: /config/config.yaml
-          image: ghcr.io/danielpower/prometheus-proxy:master@sha256:91c94852f6d36a24d9248cc4b73eff7780052ab07d1327c77fc49ee361c74c7e
+          image: ghcr.io/danielpower/prometheus-proxy:master@sha256:0c9ae5b4cde2c6c9ee61650a0c869f993fd72b833c84fce411b49b715c76fe03
           imagePullPolicy: Always
           securityContext:
             allowPrivilegeEscalation: false
