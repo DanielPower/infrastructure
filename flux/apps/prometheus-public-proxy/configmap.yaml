@@ -5,7 +5,7 @@ metadata:
 data:
   config.yaml: |
     prometheus:
-      url: https://prometheus-kube-prometheus-prometheus.prometheus.svc.cluster.local:9090
+      url: http://prometheus-kube-prometheus-prometheus.prometheus.svc.cluster.local:9090
       queries:
         health:
           query: up
