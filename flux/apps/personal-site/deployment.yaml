@@ -21,7 +21,7 @@ spec:
                 fieldRef:
                   fieldPath: spec.nodeName
             - name: PUBLIC_PROMETHEUS_URL
-              value: http://prometheus-kube-prometheus-prometheus.svc.cluster.local:9090
+              value: http://prometheus-kube-prometheus-prometheus.prometheus.svc.cluster.local:9090
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
