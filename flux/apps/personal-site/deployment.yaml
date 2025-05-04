@@ -13,14 +13,14 @@ spec:
     spec:
       containers:
         - name: personal-site
-          image: ghcr.io/danielpower/personal-site:main@sha256:ae2fe6f0bcfea1867fb6abceaf4d98f175c6c9af53b47405f0e188773017b2c6
+          image: ghcr.io/danielpower/personal-site:main@sha256:067a5d7086b70e8667a334a4f90a745194ae2731fbd453ccb71fe8343238b716
           imagePullPolicy: Always
           env:
-            - name: PUBLIC_NODE_NAME
+            - name: NODE_NAME
               valueFrom:
                 fieldRef:
                   fieldPath: spec.nodeName
-            - name: PUBLIC_PROMETHEUS_URL
+            - name: PROMETHEUS_URL
               value: http://prometheus-kube-prometheus-prometheus.prometheus.svc.cluster.local:9090
           securityContext:
             allowPrivilegeEscalation: false
