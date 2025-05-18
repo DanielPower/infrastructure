@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: immich-machine-learning
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: immich-machine-learning
@@ -14,10 +14,12 @@ spec:
     spec:
       containers:
         - name: immich-machine-learning
-          image: ghcr.io/immich-app/immich-machine-learning:v1.132.3
+          image: ghcr.io/immich-app/immich-machine-learning-rocm:v1.132.3
           ports:
             - name: http
               containerPort: 3301
+          securityContext:
+            privileged: true
           env:
             - name: DB_URL
               valueFrom:
@@ -30,3 +32,17 @@ spec:
               value: redis.immich.svc.cluster.local
             - name: IMMICH_PORT
               value: "3301"
+          volumeMounts:
+            - name: dev-dri
+              mountPath: /dev/dri
+            - name: dev-kfd
+              mountPath: /dev/kfd
+      volumes:
+        - name: dev-dri
+          hostPath:
+            path: /dev/dri
+            type: Directory
+        - name: dev-kfd
+          hostPath:
+            path: /dev/kfd
+            type: Directory
