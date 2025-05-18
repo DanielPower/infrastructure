@@ -14,12 +14,10 @@ spec:
     spec:
       containers:
         - name: immich-machine-learning
-          image: ghcr.io/immich-app/immich-machine-learning:v1.132.3-rocm
+          image: ghcr.io/immich-app/immich-machine-learning:v1.132.3
           ports:
             - name: http
               containerPort: 3301
-          securityContext:
-            privileged: true
           env:
             - name: DB_URL
               valueFrom:
@@ -32,11 +30,3 @@ spec:
               value: redis.immich.svc.cluster.local
             - name: IMMICH_PORT
               value: "3301"
-          volumeMounts:
-            - name: dev-dri
-              mountPath: /dev/dri
-      volumes:
-        - name: dev-dri
-          hostPath:
-            path: /dev/dri
-            type: Directory
