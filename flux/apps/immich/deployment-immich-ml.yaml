@@ -35,14 +35,8 @@ spec:
           volumeMounts:
             - name: dev-dri
               mountPath: /dev/dri
-            - name: dev-kfd
-              mountPath: /dev/kfd
       volumes:
         - name: dev-dri
           hostPath:
             path: /dev/dri
-            type: Directory
-        - name: dev-kfd
-          hostPath:
-            path: /dev/kfd
             type: Directory
