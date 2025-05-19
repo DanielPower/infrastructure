@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: config
 spec:
-  storageClassName: nfs-csi
+  storageClassName: nfs-csi-ssd
   accessModes:
     - ReadWriteMany
   resources:
