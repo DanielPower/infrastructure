@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: osu-replay-viewer
-          image: ghcr.io/danielpower/osu-web-replay-viewer:main@sha256:fca5397dbefe6057d9427bb2e04f477bb9671253694504ce8662427de111bf19
+          image: ghcr.io/danielpower/osu-web-replay-viewer:main@sha256:7928e64862a971198901ec553bd6fed0c623d80c0017761e6b01fa0c3e2e824a
           imagePullPolicy: Always
           securityContext:
             allowPrivilegeEscalation: false
