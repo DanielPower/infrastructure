@@ -100,11 +100,6 @@ This will:
 - Apply configurations to all nodes
 - Bootstrap the Kubernetes cluster
 
-#### Extract kubeconfig:
-```bash
-tofu output -raw kubeconfig > ~/.kube/config
-```
-
 ### 4. Flux Bootstrap
 
 #### Create GitHub deploy key:
