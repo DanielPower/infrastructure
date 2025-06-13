@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: bracket
-          image: ghcr.io/danielpower/bracket:main@sha256:5ace06a39e6450d5c38034e46bccf09a55a10a1b0539261fdb457d28b3536e4d
+          image: ghcr.io/danielpower/bracket:main@sha256:9c7b940fef5228f16d114690c3ae275831e6579da628b419680907dbfc3a9f41
           imagePullPolicy: Always
           securityContext:
             allowPrivilegeEscalation: false
