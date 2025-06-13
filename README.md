@@ -104,11 +104,12 @@ This will:
 
 #### Create GitHub deploy key:
 ```bash
-flux bootstrap git \
-  --url=ssh://git@github.com/danielpower/homelab \
+flux bootstrap github \
+  --owner=danielpower \
+  --repository=homelab \
   --branch=master \
   --path=flux \
-  --private-key-file=<path-to-private-key>
+  --personal
 ```
 
 #### Create SOPS age secret:
